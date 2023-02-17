@@ -211,8 +211,8 @@ input {
 
 .nav__logo {
   position: relative;
-  align-items: center;
-  left: 10px;
+  
+  
   font-size: 35px;
   font-weight: bolder;
 }
