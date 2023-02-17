@@ -4,11 +4,11 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
---monomarika: 230;
+
   /*========== Colors ==========*/
   /* Change favorite color to match images */
   /*Green dark 190 - Green 171 - Grren Blue 200*/
-  --hue-color: 200;
+  --hue-color: 190;
 
   /* HSL color mode */
   --first-color: hsl(var(--hue-color), 64%, 22%);
@@ -18,7 +18,7 @@
   --text-color: hsl(var(--hue-color), 24%, 35%);
   --text-color-light: hsl(var(--hue-color), 8%, 60%);
   --input-color: hsl(var(--hue-color), 24%, 97%);
-  --body-color: hsl(var(--hue-color ), 100%, 99%);
+  --body-color: hsl(var(--hue-color), 100%, 99%);
   --white-color: #FFF;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
@@ -194,7 +194,6 @@ input {
   left: 0;
   z-index: var(--z-fixed);
   background-color: transparent;
-  transition: .4s;
 }
 
 /*=============== NAV ===============*/
@@ -205,21 +204,19 @@ input {
   align-items: center;
 }
 
-.nav__logo, .nav__toggle,.nav__close {
+.nav__logo, .nav__toggle {
   color: var(--white-color);
 }
 
 .nav__logo {
   position: relative;
-  
-  
+  right: 70px;
+  font-weight: 900;
   font-size: 35px;
-  font-weight: bolder;
 }
 
 .nav__toggle {
-  display: inline-flex;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
@@ -229,17 +226,17 @@ input {
 
 @media screen and (max-width: 767px) {
   .nav__menu {
-    position: fixed;
-    background-color: var(--body-color);
-    width: 80%;
-    height: 100%;
-    top: 0;
-    right: -100%;
-    box-shadow: -4px 2px 40px #2c2c2c;
-    padding: 4rem 0 0 3rem;
-    border-radius: 1rem 0 0 1rem;
-    transition: .3s;
-    z-index: var(--z-fixed);
+      position: fixed;
+      background-color: var(--body-color);
+      width: 80%;
+      height: 100%;
+      top: 0;
+      right: -100%;
+      box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+      padding: 4rem 0 0 3rem;
+      border-radius: 1rem 0 0 1rem;
+      z-index: var(--z-fixed);
+    transition: .4s;
   }
 }
 
@@ -261,13 +258,12 @@ input {
 
 .nav__close {
   position: absolute;
-  top: 1rem;
-  right: 1.25rem;
+  top: .75rem;
+  right: 1rem;
   font-size: 1.5rem;
   color: var(--title-color);
   cursor: pointer;
 }
-
 
 /* show menu */
 .show-menu {
@@ -314,7 +310,8 @@ input {
 
 .home__container {
   position: relative;
-  height: calc(100vh - var(--header-height));
+  bottom: 50px;
+  /* height: calc(100vh - var(--header-height)); */
   align-content: center;
   row-gap: 3rem;
 }
@@ -328,32 +325,36 @@ input {
 
 .home__data-subtitle {
   position: relative;
-  bottom: 60px;
-  right: 60px;
+  bottom: 40px;
+  right: 80px;
   display: block;
   font-weight: var(--font-semi-bold);
+  font-size: 20px;
   margin-bottom: var(--mb-0-75);
 }
 
 .home__data-title {
   position: relative;
-  bottom: 60px;
-  right: 70px;
-  font-size: var(--biggest-font-size);
+  right: 90px;
+  bottom: 30px;
+  font-size: 60px;
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-2-5);
+  
 }
 
-.home__social {
+/* .home__social {
+  position: relative;
+  right: 70px;
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
 }
 
 .home__social-link {
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   width: max-content;
-}
+} */
 
 .home__info {
   background-color: var(--first-color);
@@ -392,7 +393,9 @@ input {
 }
 
 /*=============== BUTTONS ===============*/
-.button {
+/* .button {
+  position: relative;
+  right: 50px;
   display: inline-block;
   background-color: var(--first-color);
   color: var(--white-color);
@@ -403,7 +406,7 @@ input {
 
 .button:hover {
   background-color: var(--first-color-alt);
-}
+} */
 
 .button--flex {
   display: flex;
@@ -813,7 +816,6 @@ input {
 ::-webkit-scrollbar-thumb {
   background-color: var(--scroll-thumb-color);
 }
- 
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-color-light);
@@ -821,7 +823,7 @@ input {
 
 /*=============== MEDIA QUERIES ===============*/
 /* For small devices */
-@media screen and (min-width: 340px) {
+@media screen and (min-width: 242px) {
   .place__container {
     grid-template-columns: max-content;
     justify-content: center;
@@ -836,29 +838,26 @@ input {
     width: 80px;
   }
   .home__info {
-    margin: 10px;
-  }
-  .home__data-subtitle{
-    left: 13px;
-    font-size: 20px;
-    top: 5px;
-  }
-  .home__data-title{
-    font-size: 43px;
-    left: 10px;
-    top: 4px;
+    width: 190px;
+    padding: 1rem;
   }
   .experience__img,
   .video__container {
     padding: 0;
   }
   .nav__logo{
-    text-align: center;
     margin: auto;
-    left: 20x;
+    left: 12px;
+    bottom: 4px;
   }
-  .home__data{
-    right: 90px;
+  .home__data-title{
+    font-size: 45px;
+    left: 5px;
+    top: 40px;
+  }
+  .home__data-subtitle{
+    left: 5px;
+    top: 40px;
   }
 }
 
@@ -875,21 +874,6 @@ input {
   .subscribe__form {
     width: 470px;
     margin: 0 auto;
-  }
-
-  .home__container{
-  left: 20px;
-  bottom: 30px;
-  }
-  .home__data-title{
-    font-size: 50px;
-    right: 40px;
-  }
-  .home__data-subtitle{
-    font-size: 20px;
-  }
-  .home__info{
-    right: 30px;
   }
 }
 
@@ -921,7 +905,6 @@ input {
   .nav__toggle, .nav__close {
     display: none;
   }
-
   .change-theme-name {
     display: none;
   }
@@ -953,6 +936,15 @@ input {
   .home__data {
     align-self: flex-end;
   }
+  .home__data-title{
+    font-size: 55px;
+    left: 30px;
+    top: 10px;
+  }
+  .home__data-subtitle{
+    left: 30px;
+    top: 10px;
+  }
   .home__social {
     flex-direction: row;
     align-self: flex-end;
@@ -961,7 +953,6 @@ input {
   }
   .home__info {
     bottom: 3rem;
-    right: 50px;
   }
   .about__container {
     grid-template-columns: repeat(2, 1fr);
@@ -1007,10 +998,15 @@ input {
     flex-direction: row;
     justify-content: space-between;
   }
+  .nav__logo{
+    font-size: 33px;
+    right: 0px;
+    margin-left: 60px;
+  }
 }
 
 /* For large devices */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1300px) {
   .container {
     margin-left: auto;
     margin-right: auto;
@@ -1029,13 +1025,6 @@ input {
   .home__info-img {
     width: 240px;
   }
-
-  .nav__logo{
-    position: relative;
-    right: 70px;
-  }
-
-
   .about__img-one {
     width: 230px;
   }
@@ -1081,6 +1070,10 @@ input {
   }
   .footer__content {
     justify-items: center;
+  }
+  .nav__logo{
+    font-size: 35px;
+    right: 80px;
   }
 }
 
