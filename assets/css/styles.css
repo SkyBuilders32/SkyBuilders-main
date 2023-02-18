@@ -194,6 +194,7 @@ input {
   left: 0;
   z-index: var(--z-fixed);
   background-color: transparent;
+  
 }
 
 /*=============== NAV ===============*/
