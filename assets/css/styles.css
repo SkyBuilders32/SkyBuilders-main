@@ -193,7 +193,8 @@ input {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: transparent;
+  background-color: #ffffff53;
+  backdrop-filter: blur(20px);
 }
 
 /*=============== NAV ===============*/
@@ -397,7 +398,6 @@ input {
 /*=============== BUTTONS ===============*/
 .button {
   position: relative;
-  right: 50px;
   display: inline-block;
   background-color: var(--first-color);
   color: var(--white-color);
