@@ -4,11 +4,11 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
-
+--monomarika: 230;
   /*========== Colors ==========*/
   /* Change favorite color to match images */
   /*Green dark 190 - Green 171 - Grren Blue 200*/
-  --hue-color: 190;
+  --hue-color: 200;
 
   /* HSL color mode */
   --first-color: hsl(var(--hue-color), 64%, 22%);
@@ -18,7 +18,7 @@
   --text-color: hsl(var(--hue-color), 24%, 35%);
   --text-color-light: hsl(var(--hue-color), 8%, 60%);
   --input-color: hsl(var(--hue-color), 24%, 97%);
-  --body-color: hsl(var(--hue-color), 100%, 99%);
+  --body-color: hsl(var(--hue-color ), 100%, 99%);
   --white-color: #FFF;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
@@ -194,6 +194,7 @@ input {
   left: 0;
   z-index: var(--z-fixed);
   background-color: transparent;
+  transition: .4s;
 }
 
 /*=============== NAV ===============*/
@@ -204,19 +205,21 @@ input {
   align-items: center;
 }
 
-.nav__logo, .nav__toggle {
+.nav__logo, .nav__toggle,.nav__close {
   color: var(--white-color);
 }
 
 .nav__logo {
   position: relative;
-  right: 70px;
-  font-weight: 900;
+  align-items: center;
+  left: 10px;
   font-size: 35px;
+  font-weight: bolder;
 }
 
 .nav__toggle {
-  font-size: 1.2rem;
+  display: inline-flex;
+  font-size: 1.25rem;
   cursor: pointer;
 }
 
@@ -228,13 +231,15 @@ input {
   .nav__menu {
     position: fixed;
     background-color: var(--body-color);
+    width: 80%;
+    height: 100%;
     top: 0;
     right: -100%;
-    width: 70%;
-    height: 100%;
-    box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
-    padding: 3rem;
-    transition: .4s;
+    box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+    padding: 4rem 0 0 3rem;
+    border-radius: 1rem 0 0 1rem;
+    transition: .3s;
+    z-index: var(--z-fixed);
   }
 }
 
@@ -256,12 +261,13 @@ input {
 
 .nav__close {
   position: absolute;
-  top: .75rem;
-  right: 1rem;
+  top: 1rem;
+  right: 1.25rem;
   font-size: 1.5rem;
   color: var(--title-color);
   cursor: pointer;
 }
+
 
 /* show menu */
 .show-menu {
@@ -308,8 +314,7 @@ input {
 
 .home__container {
   position: relative;
-  bottom: 50px;
-  /* height: calc(100vh - var(--header-height)); */
+  height: calc(100vh - var(--header-height));
   align-content: center;
   row-gap: 3rem;
 }
@@ -323,36 +328,32 @@ input {
 
 .home__data-subtitle {
   position: relative;
-  bottom: 40px;
-  right: 80px;
+  bottom: 60px;
+  right: 60px;
   display: block;
   font-weight: var(--font-semi-bold);
-  font-size: 20px;
   margin-bottom: var(--mb-0-75);
 }
 
 .home__data-title {
   position: relative;
-  right: 90px;
-  bottom: 30px;
-  font-size: 60px;
+  bottom: 60px;
+  right: 70px;
+  font-size: var(--biggest-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-2-5);
-  
 }
 
-/* .home__social {
-  position: relative;
-  right: 70px;
+.home__social {
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
 }
 
 .home__social-link {
-  font-size: 2.2rem;
+  font-size: 1.2rem;
   width: max-content;
-} */
+}
 
 .home__info {
   background-color: var(--first-color);
@@ -391,9 +392,7 @@ input {
 }
 
 /*=============== BUTTONS ===============*/
-/* .button {
-  position: relative;
-  right: 50px;
+.button {
   display: inline-block;
   background-color: var(--first-color);
   color: var(--white-color);
@@ -404,7 +403,7 @@ input {
 
 .button:hover {
   background-color: var(--first-color-alt);
-} */
+}
 
 .button--flex {
   display: flex;
@@ -814,6 +813,7 @@ input {
 ::-webkit-scrollbar-thumb {
   background-color: var(--scroll-thumb-color);
 }
+ 
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-color-light);
@@ -836,12 +836,29 @@ input {
     width: 80px;
   }
   .home__info {
-    width: 190px;
-    padding: 1rem;
+    margin: 10px;
+  }
+  .home__data-subtitle{
+    left: 13px;
+    font-size: 20px;
+    top: 5px;
+  }
+  .home__data-title{
+    font-size: 43px;
+    left: 10px;
+    top: 4px;
   }
   .experience__img,
   .video__container {
     padding: 0;
+  }
+  .nav__logo{
+    text-align: center;
+    margin: auto;
+    left: 20x;
+  }
+  .home__data{
+    right: 90px;
   }
 }
 
@@ -859,9 +876,20 @@ input {
     width: 470px;
     margin: 0 auto;
   }
-  .nav__logo{
-    /* margin: auto; */
-    left: 2px;
+
+  .home__container{
+  left: 20px;
+  bottom: 30px;
+  }
+  .home__data-title{
+    font-size: 50px;
+    right: 40px;
+  }
+  .home__data-subtitle{
+    font-size: 20px;
+  }
+  .home__info{
+    right: 30px;
   }
 }
 
@@ -893,6 +921,7 @@ input {
   .nav__toggle, .nav__close {
     display: none;
   }
+
   .change-theme-name {
     display: none;
   }
@@ -924,15 +953,6 @@ input {
   .home__data {
     align-self: flex-end;
   }
-  .home__data-title{
-    font-size: 55px;
-    left: 30px;
-    top: 10px;
-  }
-  .home__data-subtitle{
-    left: 30px;
-    top: 10px;
-  }
   .home__social {
     flex-direction: row;
     align-self: flex-end;
@@ -941,6 +961,7 @@ input {
   }
   .home__info {
     bottom: 3rem;
+    right: 50px;
   }
   .about__container {
     grid-template-columns: repeat(2, 1fr);
@@ -986,15 +1007,10 @@ input {
     flex-direction: row;
     justify-content: space-between;
   }
-  .nav__logo{
-    font-size: 33px;
-    right: 0px;
-    margin-left: 60px;
-  }
 }
 
 /* For large devices */
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1024px) {
   .container {
     margin-left: auto;
     margin-right: auto;
@@ -1013,6 +1029,13 @@ input {
   .home__info-img {
     width: 240px;
   }
+
+  .nav__logo{
+    position: relative;
+    right: 70px;
+  }
+
+
   .about__img-one {
     width: 230px;
   }
@@ -1058,10 +1081,6 @@ input {
   }
   .footer__content {
     justify-items: center;
-  }
-  .nav__logo{
-    font-size: 35px;
-    right: 80px;
   }
 }
 
