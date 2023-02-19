@@ -211,9 +211,9 @@ input {
 
 .nav__logo {
   position: relative;
+  right: 70px;
   font-weight: 900;
   font-size: 35px;
-  right: 30px;
 }
 
 .nav__toggle {
@@ -246,7 +246,7 @@ input {
 .nav__list {
   display: flex;
   flex-direction: column;
-  row-gap: 3.5rem;
+  row-gap: 2.5rem;
 }
 
 .nav__link {
@@ -313,8 +313,7 @@ input {
 
 .home__container {
   position: relative;
-  bottom: 80px;
-  right: 70px;
+  bottom: 50px;
   /* height: calc(100vh - var(--header-height)); */
   align-content: center;
   row-gap: 3rem;
@@ -328,7 +327,9 @@ input {
 }
 
 .home__data-subtitle {
-
+  position: relative;
+  bottom: 40px;
+  right: 80px;
   display: block;
   font-weight: var(--font-semi-bold);
   font-size: 20px;
@@ -336,9 +337,9 @@ input {
 }
 
 .home__data-title {
-  /* position: relative; */
-  /* right: 90px; */
-  /* bottom: 30px; */
+  position: relative;
+  right: 90px;
+  bottom: 30px;
   font-size: 60px;
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-2-5);
@@ -713,9 +714,6 @@ footer{
     left: 5px;
     top: 40px;
   }
-  .nav__list{
-    margin: 0;
-  }
 }
 
 /* For medium devices */
@@ -938,9 +936,6 @@ footer{
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1024px;
-  }
-  .nav__list{
-    margin: 60px;
   }
 }
 
