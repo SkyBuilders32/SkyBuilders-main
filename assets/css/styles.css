@@ -676,6 +676,9 @@ footer{
 /*=============== MEDIA QUERIES ===============*/
 /* For small devices */
 @media screen and (min-width: 242px) {
+  .footer__data{
+    text-align: center;
+  }
   .place__container {
     grid-template-columns: max-content;
     justify-content: center;
