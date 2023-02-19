@@ -313,7 +313,8 @@ input {
 
 .home__container {
   position: relative;
-  bottom: 50px;
+  bottom: 75px;
+  right: 50px;
   /* height: calc(100vh - var(--header-height)); */
   align-content: center;
   row-gap: 3rem;
@@ -327,9 +328,9 @@ input {
 }
 
 .home__data-subtitle {
-  position: relative;
+  /* position: relative;
   bottom: 40px;
-  right: 80px;
+  right: 80px; */
   display: block;
   font-weight: var(--font-semi-bold);
   font-size: 20px;
@@ -337,10 +338,10 @@ input {
 }
 
 .home__data-title {
-  position: relative;
+  /* position: relative;
   right: 90px;
-  bottom: 30px;
-  font-size: 60px;
+  bottom: 30px; */
+  /* font-size: 2 0px; */
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-2-5);
   
@@ -706,7 +707,7 @@ footer{
     bottom: 4px;
   }
   .home__data-title{
-    font-size: 45px;
+    font-size: 35px;
     left: 5px;
     top: 40px;
   }
