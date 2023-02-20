@@ -301,7 +301,7 @@ input {
 }
 
 /*=============== HOME ===============*/
-.home__img {
+.home__img,.home__img-servicios {
   position: absolute;
   top: 0;
   left: 0;
@@ -310,16 +310,7 @@ input {
   object-fit: cover;
   object-position: 83%;
 }
-.home__img-servicios {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  object-position: 83%;
-  filter: brightness(70%);
-}
+
 
 .home__container {
   position: relative;
@@ -955,7 +946,7 @@ footer{
   body {
     margin: 0;
   }
-  .home__container, .home__img {
+  .home__container, .home__img,.home__img-servicios {
     height: 640px;
   }
 }
