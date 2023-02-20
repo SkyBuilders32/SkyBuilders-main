@@ -432,8 +432,6 @@ input {
 
 .about__container {
   row-gap: 2.5rem;
-  position: relative;
-  right: 60px;
 }
 
 .about__description {
@@ -441,10 +439,8 @@ input {
 }
 
 .about__img {
-  position: relative;
-  left: 80px;
   display: flex;
-  column-gap: 2rem;
+  column-gap: 1rem;
   align-items: center;
   justify-content: center;
 }
@@ -454,11 +450,11 @@ input {
 }
 
 .about__img-one {
-  width: 50px;
+  width: 130px;
 }
 
 .about__img-two {
-  width: 100px;
+  width: 180px;
 }
 
 .about__img-one, 
