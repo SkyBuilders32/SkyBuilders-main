@@ -310,6 +310,9 @@ input {
   object-fit: cover;
   object-position: 83%;
 }
+.home__img-servicios{
+  filter: brightness(70%);
+}
 
 
 .home__container {
