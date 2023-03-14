@@ -400,33 +400,53 @@ input {
 }
 
 /*=============== BUTTONS ===============*/
-.button {
+.btn {
+  font-size: 17px;
+  background:#cacaca48;
+  border: none;
+  padding: 1em 1.5em;
+  color: #000000;
+  text-transform: uppercase;
   position: relative;
-  display: inline-block;
+  transition: .5s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
   background-color: var(--first-color);
-  color: var(--white-color);
-  padding: 1rem 2rem;
-  font-weight: var(--font-semi-bold);
-  transition: .3s;
+  transition: .5s ease;
 }
 
-.button:hover {
-  background-color: var(--first-color-alt);
+.btn:hover {
+  color: #fff;
+  transition-delay: .5s;
 }
 
-.button--flex {
-  display: flex;
-  align-items: center;
-  column-gap: .25rem;
+.btn:hover::before {
+  width: 100%;
 }
 
-.button--link {
-  background: none;
-  padding: 0;
+.btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #005d92;
+  transition: .4s ease;
+  z-index: -1;
 }
 
-.button--link:hover {
-  background: none;
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
 }
 
 /*=============== ABOUT ===============*/
